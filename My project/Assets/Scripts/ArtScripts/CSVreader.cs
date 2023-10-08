@@ -122,6 +122,9 @@ public class CSVreader : MonoBehaviour
 
         GameObject newObject = new GameObject(year);
         newObject.transform.parent = theMoon.transform;
+
+        // AudioSource newAudioSource = newObject.AddComponent();
+        // newAudioSource.clip = Resources.Load(xxxxx) as AudioClip;
         
 
 
