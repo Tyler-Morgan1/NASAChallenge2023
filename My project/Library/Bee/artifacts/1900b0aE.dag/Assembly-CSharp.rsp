@@ -368,6 +368,7 @@
 "Assets/Scripts/ArtScripts/PlotOnSurface.cs"
 "Assets/Scripts/ArtScripts/SciFiPlanetPointer.cs"
 "Assets/Scripts/ArtScripts/SpinMoon.cs"
+"Assets/Scripts/ArtScripts/turnOffUI.cs"
 -langversion:9.0
 
 /deterministic

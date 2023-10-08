@@ -5,7 +5,7 @@ using System.IO;
 
 public class CSVreader : MonoBehaviour
 {
-    /*public string StationFileName = "StationMapping";
+    public string StationFileName = "StationMapping";
     public string QuakesFileName = "QuakeMapping";
 
 
@@ -19,15 +19,20 @@ public class CSVreader : MonoBehaviour
 
     void Start()
     {
-        vectorOfVectors = StationMapping();
-        plotAll();
-
         var render = theMoon.GetComponent<Renderer>();
         moonCollider = theMoon.GetComponent<SphereCollider>();
+
+
         radius = (render.bounds.extents.magnitude / 2);
         radius *= 1.1f;
+        
 
+        vectorOfVectors = StationMapping();
+        //plotAll();
 
+        vectorOfVectors.Clear();
+        vectorOfVectors = QuakeMapping();
+        plotAllQuakes();
         
 
         //List<List<string>> lines = ReadCSVFile(StationFileName);
@@ -77,16 +82,11 @@ public class CSVreader : MonoBehaviour
             lat = stationData[i][1];
             longitude = stationData[i][2];
 
-            Debug.Log(float.Parse(lat) + "lat");
-            Debug.Log(float.Parse(longitude) + "long");
-            Debug.Log("GPS" + GPSLocation(float.Parse(lat), float.Parse(longitude)));
+            
             output.Add(GPSLocation(float.Parse(lat), float.Parse(longitude)));
         }
 
-        for (int i = 1; i < 6; i++)
-        {
-            Debug.Log(output[i]);
-        }
+        
         return output;
     }
 
@@ -108,34 +108,52 @@ public class CSVreader : MonoBehaviour
         return output;
     }
 
-    void plotAll()
+    void plotAllQuakes()
     {
+        List<List<string>> quakeData = ReadCSVFile(QuakesFileName);
+        string year = quakeData[1][0];
 
-        for (int i = 0; i < vectorOfVectors.Count; i++)
+
+        GameObject newObject = new GameObject(year);
+        newObject.transform.parent = theMoon.transform;
+        
+
+
+        for (int i = 1; i < vectorOfVectors.Count+1; i++)
         {
-            Debug.Log(vectorOfVectors[i]);
-            Instantiate(theButton, vectorOfVectors[i], Quaternion.identity, theMoon.transform);
+
+            if(quakeData[i][0] != year)
+            {
+                year = quakeData[i][0];
+                newObject = new GameObject(year);
+                newObject.transform.parent = theMoon.transform;
+
+            }
+
+            Instantiate(theButton, vectorOfVectors[i-1], theMoon.transform.rotation, newObject.transform);
             
         }
+
+        
+
     }
 
     private Vector3 GPSLocation(float Lat, float Lon)
     {
-        //something is happenign here
+        
         Vector3 result;
         float ltR = Lat * Mathf.Deg2Rad;
         float lnR = Lon * Mathf.Deg2Rad;
 
-        float xPos = (radius * transform.lossyScale.z) * Mathf.Cos(ltR) * Mathf.Cos(lnR);
-        float zPos = (radius * transform.lossyScale.z) * Mathf.Cos(ltR) * Mathf.Sin(lnR);
-        float yPos = (radius * transform.lossyScale.z) * Mathf.Sin(ltR);
+        float xPos = (radius) * Mathf.Cos(ltR) * Mathf.Cos(lnR);
+        float zPos = (radius) * Mathf.Cos(ltR) * Mathf.Sin(lnR);
+        float yPos = (radius) * Mathf.Sin(ltR);
 
-
+       
 
         Vector3 earthPositon = theMoon.transform.position;
         result = new Vector3(xPos + earthPositon.x, yPos + earthPositon.y, zPos + earthPositon.z);
 
-
         return result;
-    }*/
+    }
 }
