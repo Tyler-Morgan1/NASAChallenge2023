@@ -370,6 +370,8 @@
 "Assets/Scripts/ArtScripts/TurnMoonOff.cs"
 "Assets/Scripts/ArtScripts/updateInfor.cs"
 "Assets/Scripts/ArtScripts/updateMenu.cs"
+"Assets/Scripts/RestOfTeamScripts/LoadAudio.cs"
+"Assets/Scripts/RestOfTeamScripts/LoadImages.cs"
 -langversion:9.0
 
 /deterministic
