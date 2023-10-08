@@ -1,0 +1,7 @@
+Sources used for MoonQuake2.0 - Leet Coders
+
+pdart: https://github.com/cerinunn/pdart/blob/master/getting_started.ipynb
+
+obspy: https://github.com/obspy/obspy
+
+sac2wav: https://seiscode.iris.washington.edu/projects/sac2wav
