@@ -9,9 +9,9 @@
 
 ---
 
-Link to our completed project:
+Link to our completed project application: https://play.unity.com/mg/other/webgl_publisher_folder
 
-Link to our slide show:
+Link to our slide show: https://docs.google.com/presentation/d/1tn16w-mocrxh67xqIhOOfXuaXtIadBTYSW6-yYRIzWg/edit#slide=id.g1c073d96ae2_2_35
 
 
 Our project is an interactive map of seismic sensors and events on the surface of the moon. We used the C# language and Unity game engine to create a 3D model. 
