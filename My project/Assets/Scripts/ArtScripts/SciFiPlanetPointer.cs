@@ -140,6 +140,17 @@ public class SciFiPlanetPointer : MonoBehaviour
             UIleft.SetActive(false);
             UIright.SetActive(false);
         }
+        if(myOwnPointer != null)
+        {
+            if(myOwnPointer.active == false)
+            {
+                myLine.SetPosition(0, middle.transform.position);
+                myLine.SetPosition(1, middle.transform.position);
+                myLine.SetPosition(2, middle.transform.position);
+
+            }
+            
+        }
         
 
 
@@ -150,7 +161,9 @@ public class SciFiPlanetPointer : MonoBehaviour
         }
         else 
         {
+
             myOwnPointer = newObject.currentObject;
+            
         }
 
         

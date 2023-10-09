@@ -60,12 +60,14 @@ public class CSVreader : MonoBehaviour
 
             while (true)
             {
+                
                 string line = reader.ReadLine();
                 if (line == null)
                 {
                     break;
                 }
                 List<string> row = new List<string>(line.Split(','));
+
                 data.Add(row);
             }
         }
@@ -139,8 +141,8 @@ public class CSVreader : MonoBehaviour
 
             }
 
-            Instantiate(theButton, vectorOfVectors[i-1], theMoon.transform.rotation, newObject.transform);
-            
+           var holder =  Instantiate(theButton, vectorOfVectors[i-1], theMoon.transform.rotation, newObject.transform);
+            holder.GetComponent<KeepIndex>().thisIndex = i;
         }
 
         
@@ -159,8 +161,8 @@ public class CSVreader : MonoBehaviour
         for (int i = 1; i < vectorOfVectors.Count + 1; i++)
         {
 
-            Instantiate(theButtonA, vectorOfVectors[i - 1], theMoon.transform.rotation, newObject.transform);
-
+            var holder = Instantiate(theButtonA, vectorOfVectors[i - 1], theMoon.transform.rotation, newObject.transform);
+            holder.GetComponent<KeepIndex>().thisIndex = i;
         }
         
     }

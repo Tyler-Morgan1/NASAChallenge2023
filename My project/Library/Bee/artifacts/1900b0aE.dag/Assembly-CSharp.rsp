@@ -365,13 +365,16 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2023.1.16f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scripts/ArtScripts/ClickOnObject.cs"
 "Assets/Scripts/ArtScripts/CSVreader.cs"
+"Assets/Scripts/ArtScripts/KeepIndex.cs"
 "Assets/Scripts/ArtScripts/SciFiPlanetPointer.cs"
 "Assets/Scripts/ArtScripts/SpinMoon.cs"
 "Assets/Scripts/ArtScripts/TurnMoonOff.cs"
 "Assets/Scripts/ArtScripts/updateInfor.cs"
 "Assets/Scripts/ArtScripts/updateMenu.cs"
+"Assets/Scripts/RestOfTeamScripts/CameraShake.cs"
 "Assets/Scripts/RestOfTeamScripts/LoadAudio.cs"
 "Assets/Scripts/RestOfTeamScripts/LoadImages.cs"
+"Assets/Scripts/RestOfTeamScripts/TriggerShake.cs"
 -langversion:9.0
 
 /deterministic
